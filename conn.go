@@ -55,7 +55,7 @@ type Conn struct {
 func NewConn(conn net.Conn) (*Conn, error) {
 	c := Conn{
 		Conn: conn,
-		r:    bufio.NewReaderSize(conn, 256),
+		r:    bufio.NewReaderSize(conn, 10240),
 	}
 	return &c, nil
 }
